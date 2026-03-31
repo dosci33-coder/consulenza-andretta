@@ -2,9 +2,8 @@
 <html lang="it">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Consulenza Assicurativa | Dott. Giuseppe Andretta</title>
-    <meta name="google-site-verification" content="qrQzJ5ieufBss6wjpZOOX1jSqK8TAyyQDHK_YOIwQ-4" />
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
@@ -17,391 +16,86 @@
         --hero-overlay: rgba(10, 30, 60, 0.70);
     }
 
-    html { scroll-behavior: smooth; }
-
-    body {
-        font-family: 'Montserrat', sans-serif;
-        margin: 0;
-        background-color: var(--bg-page);
-        color: var(--text-main);
-        line-height: 1.7;
-        overflow-x: hidden; /* Evita scroll orizzontale su telefono */
-    }
-
+    html, body { overflow-x: hidden; width: 100%; margin: 0; padding: 0; scroll-behavior: smooth; }
+    body { font-family: 'Montserrat', sans-serif; background-color: var(--bg-page); color: var(--text-main); line-height: 1.7; }
     h1, h2, h3, .logo { font-family: 'Playfair Display', serif; }
 
-    /* --- Header --- */
     header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 15px 8%;
-        background: var(--bg-card);
+        display: flex; justify-content: space-between; align-items: center;
+        padding: 15px 5%; background: var(--bg-card);
         box-shadow: 0 2px 15px rgba(0,0,0,0.08);
-        position: sticky;
-        top: 0;
-        z-index: 1000;
+        position: sticky; top: 0; z-index: 1000;
     }
+    .logo { font-weight: 700; font-size: 1rem; color: var(--primary-blue); text-decoration: none; border-left: 3px solid var(--accent-gold); padding-left: 10px; }
+    nav a { text-decoration: none; color: var(--primary-blue); margin-left: 15px; font-weight: 600; font-size: 0.75rem; text-transform: uppercase; }
+    .btn-cta { background: var(--primary-blue); color: white !important; padding: 8px 15px; border-radius: 4px; }
 
-    .logo {
-        font-weight: 700;
-        font-size: 1.2rem;
-        color: var(--primary-blue);
-        letter-spacing: 0.5px;
-        text-decoration: none;
-        border-left: 3px solid var(--accent-gold);
-        padding-left: 12px;
-    }
-
-    nav a {
-        text-decoration: none;
-        color: var(--primary-blue);
-        margin-left: 30px;
-        font-weight: 600;
-        font-size: 0.85rem;
-        text-transform: uppercase;
-        transition: 0.3s;
-    }
-
-    nav a:hover { color: var(--accent-gold); }
-
-    .btn-cta {
-        background: var(--primary-blue);
-        color: white !important;
-        padding: 10px 22px;
-        border-radius: 4px;
-        font-weight: bold;
-    }
-
-    /* --- Hero Section --- */
     .hero {
-        position: relative;
-        width: 100%;
-        height: 80vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        background-image: url('https://nicolaporro.np.ticdn.it/wp-content/uploads/2021/09/Assicurazione.jpg');
-        background-size: cover;
-        background-position: center;
-        color: white;
+        position: relative; width: 100%; height: 75vh;
+        display: flex; align-items: center; justify-content: center;
+        text-align: center; color: white;
+        background: url('https://nicolaporro.np.ticdn.it/wp-content/uploads/2021/09/Assicurazione.jpg') center/cover no-repeat;
     }
+    .hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: var(--hero-overlay); }
+    .hero-content { position: relative; z-index: 2; padding: 0 20px; max-width: 800px; }
+    .hero h2 { font-size: 2rem; font-weight: 700; font-style: italic; margin-bottom: 30px; line-height: 1.3; }
+    .hero-btn { display: inline-block; padding: 16px 35px; background: var(--accent-gold); color: white; text-decoration: none; font-weight: bold; border-radius: 4px; text-transform: uppercase; letter-spacing: 1px; }
 
-    .hero-overlay {
-        position: absolute;
-        top: 0; left: 0; width: 100%; height: 100%;
-        background-color: var(--hero-overlay);
-        z-index: 1;
-    }
+    .about { background: #fff; padding: 80px 8%; display: flex; flex-wrap: wrap; gap: 50px; align-items: center; }
+    .about-text { flex: 1.5; min-width: 320px; }
+    .about-text h2 { color: var(--primary-blue); font-size: 2.6rem; margin-bottom: 25px; }
+    .about-text p { font-size: 1.1rem; color: #555; margin-bottom: 20px; }
+    .about-highlights-vertical { flex: 1; min-width: 300px; display: flex; flex-direction: column; gap: 20px; }
+    .highlight-card { background: var(--bg-page); padding: 25px; border-radius: 12px; display: flex; align-items: center; gap: 20px; border-left: 5px solid var(--accent-gold); box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
+    .highlight-card i { font-size: 2.2rem; color: var(--primary-blue); }
+    .highlight-card h4 { margin: 0; font-size: 1.4rem; color: var(--primary-blue); }
+    .highlight-card span { font-size: 0.85rem; text-transform: uppercase; color: #777; font-weight: 600; }
 
-    .hero-content {
-        position: relative;
-        z-index: 2;
-        max-width: 900px;
-        padding: 0 20px;
-    }
-
-    .hero h2 {
-        font-size: 2.6rem;
-        font-weight: 700;
-        font-style: italic;
-        margin-bottom: 30px;
-        line-height: 1.2;
-    }
-
-    .hero-btn {
-        display: inline-block;
-        padding: 16px 40px;
-        background: var(--accent-gold);
-        color: white;
-        text-decoration: none;
-        font-weight: bold;
-        border-radius: 4px;
-        transition: 0.4s;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-    }
-
-    /* --- Chi Sono --- */
-    .about {
-        background-color: #ffffff;
-        border-bottom: 1px solid #eee;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        gap: 60px;
-        padding: 100px 8%;
-    }
-
-    .about-text { flex: 1.5; text-align: left; }
-    .about-text h2 { color: var(--primary-blue); font-size: 2.8rem; margin-top: 0; margin-bottom: 30px; }
-    .about-text p { font-size: 1.1rem; color: #555; margin-bottom: 25px; }
-
-    .about-highlights-vertical {
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-        max-width: 350px;
-    }
-
-    .highlight-card {
-        background: var(--bg-page);
-        padding: 25px;
-        border-radius: 12px;
-        display: flex;
-        align-items: center;
-        gap: 20px;
-        position: relative;
-        overflow: hidden;
-        border-left: 5px solid var(--accent-gold);
-        box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-        transition: 0.3s ease;
-    }
-
-    .highlight-card::after {
-        content: "";
-        position: absolute;
-        top: 0; left: -150%;
-        width: 100%; height: 100%;
-        background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.4), transparent);
-        transform: skewX(-25deg);
-        transition: 0s;
-    }
-
-    .highlight-card:hover::after { left: 150%; transition: 1.5s ease; }
-
-    .highlight-card i { font-size: 2.2rem; color: var(--primary-blue); width: 45px; text-align: center; }
-    .highlight-card .stat-text h4 { margin: 0; color: var(--primary-blue); font-size: 1.5rem; font-weight: 700; }
-    .highlight-card .stat-text span { font-size: 0.85rem; color: #777; font-weight: 600; text-transform: uppercase; }
-
-    /* --- Servizi --- */
-    .services { text-align: center; padding: 90px 8%; }
-    .services h2 { color: var(--primary-blue); font-size: 2.8rem; margin-bottom: 10px; }
+    .services { padding: 80px 8%; text-align: center; }
+    .services h2 { color: var(--primary-blue); font-size: 2.6rem; margin-bottom: 10px; }
     .services .subtitle { font-size: 1.1rem; color: #666; margin-bottom: 50px; }
+    .grid-services { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 30px; }
+    .card { background: white; padding: 40px 30px; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); transition: 0.4s; }
+    .card:hover { transform: translateY(-10px); }
+    .card i { font-size: 2.5rem; color: var(--accent-gold); margin-bottom: 25px; }
 
-    .grid-services {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-        gap: 30px;
-        max-width: 1200px;
-        margin: 0 auto;
+    .metodo { background: #fff; padding: 80px 5%; text-align: center; border-top: 1px solid #eee; }
+    .metodo h2 { font-size: 2.6rem; color: var(--primary-blue); margin-bottom: 15px; }
+    .metodo .subtitle { font-size: 1.1rem; color: #666; margin-bottom: 50px; }
+    .steps { display: flex; flex-direction: column; align-items: center; gap: 25px; max-width: 600px; margin: 0 auto; }
+    .step { display: flex; align-items: center; width: 100%; background: var(--bg-page); padding: 20px; border-radius: 60px 20px 20px 60px; box-shadow: 0 4px 12px rgba(0,0,0,0.04); }
+    .step-icon-wrap { width: 75px; height: 75px; min-width: 75px; background: var(--primary-blue); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 25px; position: relative; color: white; }
+    .step-icon-wrap i { font-size: 1.6rem; }
+    .step-number { position: absolute; top: -5px; right: -5px; background: var(--accent-gold); width: 28px; height: 28px; border-radius: 50%; font-weight: bold; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; }
+    .step-content { text-align: left; }
+    .step-content h3 { margin: 0; font-size: 1.2rem; color: var(--primary-blue); }
+    .step-content p { margin: 5px 0 0; color: #666; font-size: 0.95rem; }
+
+    .contact-container { padding: 80px 8%; display: flex; flex-wrap: wrap; gap: 60px; background: #f8f9fa; }
+    .contact-info { flex: 1.5; min-width: 320px; }
+    .contact-info h2 { color: var(--primary-blue); font-size: 2.6rem; margin-bottom: 25px; }
+    .contact-details p { display: flex; align-items: center; margin-bottom: 20px; font-size: 1.1rem; }
+    .contact-details i { margin-right: 15px; color: var(--accent-gold); font-size: 1.3rem; width: 25px; text-align: center; }
+    .quick-contact-box { flex: 1; min-width: 300px; display: flex; flex-direction: column; gap: 20px; }
+    .contact-card { display: flex; align-items: center; gap: 20px; background: white; padding: 25px; border-radius: 15px; text-decoration: none; color: var(--primary-blue); box-shadow: 0 4px 15px rgba(0,0,0,0.06); transition: 0.3s; }
+    .contact-card:hover { transform: translateY(-5px); background: var(--primary-blue); color: white; }
+
+    footer { background: var(--primary-blue); color: white; padding: 60px 20px; text-align: center; }
+    .rui-code { background: rgba(255,255,255,0.1); padding: 6px 18px; border-radius: 20px; font-size: 0.85rem; border: 1px solid rgba(255,255,255,0.2); display: inline-block; margin: 20px 0; }
+
+    @media (min-width: 900px) {
+        .steps { flex-direction: row; max-width: 1200px; justify-content: space-between; gap: 15px; }
+        .step { flex-direction: column; background: transparent; box-shadow: none; padding: 0; text-align: center; }
+        .step-icon-wrap { margin-right: 0; margin-bottom: 20px; width: 100px; height: 100px; }
+        .step-content { text-align: center; }
     }
-
-    .card {
-        background: var(--bg-card);
-        padding: 45px 30px;
-        border-radius: 15px;
-        box-shadow: 0 5px 20px rgba(0,0,0,0.04);
-        transition: 0.4s;
-        border-top: 4px solid transparent;
-    }
-
-    .card:hover { transform: translateY(-10px); border-top: 4px solid var(--accent-gold); }
-    .card i { font-size: 2.5rem; color: var(--accent-gold); margin-bottom: 25px; transition: 0.3s; }
-
-    /* Animazioni Servizi */
-    @keyframes heart-beat { 0%, 100% { transform: scale(1); } 15%, 45% { transform: scale(1.15); } }
-    .card:has(.fa-hand-holding-heart):hover i { animation: heart-beat 1.2s infinite; }
-    @keyframes suitcase-lift { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
-    .card:has(.fa-suitcase):hover i { animation: suitcase-lift 0.8s ease-out; }
-    @keyframes hourglass-spin { from { transform: rotate(0deg); } to { transform: rotate(180deg); } }
-    .card:has(.fa-hourglass-half):hover i { animation: hourglass-spin 1s infinite linear; }
-    @keyframes chart-pulse { 0%, 100% { color: var(--accent-gold); } 50% { color: #eec170; text-shadow: 0 0 10px #eec170; } }
-    .card:has(.fa-chart-line):hover i { animation: chart-pulse 1s infinite; }
-
-    /* --- Metodo --- */
-    .metodo {
-        background-color: #ffffff;
-        text-align: center;
-        border-top: 1px solid #eee;
-        padding: 90px 8%;
-    }
-
-    .metodo h2 { font-size: 2.8rem; color: var(--primary-blue); margin-bottom: 15px; }
-
-    .steps {
-        display: grid;
-        grid-template-columns: repeat(5, 1fr);
-        gap: 20px;
-        max-width: 1200px;
-        margin: 60px auto 0;
-    }
-
-    .step {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-
-    .step-icon-wrap {
-        width: 100px;
-        height: 100px;
-        background: #f8f9fa;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-bottom: 20px;
-        position: relative;
-        border: 1px solid #eee;
-        transition: 0.4s ease;
-    }
-
-    .step-icon-wrap i { font-size: 2rem; color: var(--primary-blue); transition: 0.4s; }
-
-    .step-number {
-        position: absolute;
-        top: -5px;
-        right: -5px;
-        background: var(--accent-gold);
-        color: white;
-        width: 30px;
-        height: 30px;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-weight: bold;
-        font-size: 0.8rem;
-    }
-
-    @media (min-width: 851px) {
-        .step p { max-height: 0; opacity: 0; overflow: hidden; margin: 0; transition: 0.4s ease; }
-        .step:hover .step-icon-wrap { background: var(--primary-blue); transform: scale(1.1); }
-        .step:hover .step-icon-wrap i { color: white; }
-        .step:hover p { max-height: 150px; opacity: 1; margin-top: 15px; }
-    }
-
-    /* --- Contatti --- */
-    .contact-container { 
-        background: #f8f9fa; 
-        display: flex; 
-        justify-content: space-between; 
-        align-items: center; 
-        gap: 60px; 
-        padding: 100px 8%; 
-        max-width: 1200px;
-        margin: 0 auto;
-    }
-    
-    .contact-info { 
-        flex: 1.5; 
-        text-align: left; 
-    }
-    
-    .contact-info h2 {
-        color: var(--primary-blue);
-        font-size: 2.8rem;
-        margin-top: 0;
-        margin-bottom: 20px;
-    }
-
-    .contact-details { margin-top: 30px; }
-    .contact-details p { 
-        display: flex; 
-        align-items: center; 
-        margin-bottom: 18px; 
-        font-size: 1.1rem;
-        color: var(--text-main);
-    }
-    .contact-details i { margin-right: 15px; color: var(--accent-gold); width: 25px; text-align: center; font-size: 1.2rem; }
-
-    .map-link { 
-        text-decoration: none !important; 
-        color: var(--text-main) !important; 
-        transition: 0.3s;
-        display: flex;
-        align-items: center;
-    }
-    .map-link:hover { color: var(--accent-gold) !important; }
-
-    .quick-contact-box { 
-        flex: 1; 
-        display: flex; 
-        flex-direction: column; 
-        gap: 20px; 
-        width: 100%;
-        max-width: 350px;
-    }
-
-    .contact-card { 
-        display: flex; 
-        align-items: center; 
-        background: white; 
-        padding: 22px 25px; 
-        border-radius: 15px; 
-        text-decoration: none; 
-        color: var(--primary-blue); 
-        box-shadow: 0 4px 15px rgba(0,0,0,0.05); 
-        transition: 0.3s; 
-    }
-    
-    .contact-card:hover { 
-        transform: translateY(-5px); 
-        background: var(--primary-blue); 
-        color: white; 
-    }
-    
-    .contact-card h4 { margin: 0; font-size: 1.1rem; font-weight: 700; }
-    .contact-card i { font-size: 1.8rem; margin-right: 20px; }
-    .contact-card:hover i { color: white !important; }
-
-    /* --- Footer --- */
-    footer { background-color: var(--primary-blue); color: #ffffff; padding: 50px 20px; text-align: center; }
-    .rui-code { background: rgba(255,255,255,0.1); padding: 5px 15px; border-radius: 20px; font-size: 0.85rem; margin-top: 15px; display: inline-block; border: 1px solid rgba(255,255,255,0.2); }
-
-    /* --- MOBILE RESPONSIVE AGGIORNATO --- */
-    @media (max-width: 900px) {
-        header { 
-            flex-direction: column; 
-            padding: 20px 5%;
-        }
-        nav { 
-            margin-top: 15px;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 10px;
-        }
-        nav a { 
-            margin: 5px 10px; 
-            font-size: 0.75rem;
-        }
-        .hero h2 { font-size: 1.8rem; }
-        .about, .contact-container { 
-            flex-direction: column; 
-            text-align: center; 
-            padding: 60px 8%; 
-        }
-        .about-text, .contact-info { text-align: center; }
+    @media (max-width: 600px) {
+        header { flex-direction: column; padding: 15px; text-align: center; }
+        nav { margin-top: 15px; flex-wrap: wrap; justify-content: center; gap: 10px; }
+        nav a { margin: 5px; font-size: 0.7rem; }
+        .hero h2 { font-size: 1.6rem; }
+        .about, .contact-container { padding: 60px 5%; text-align: center; }
         .contact-details p { justify-content: center; }
-        .about-highlights-vertical, .quick-contact-box {
-            max-width: 100%;
-            width: 100%;
-        }
-        
-        /* SISTEMAZIONE METODO SU MOBILE */
-        .steps {
-            grid-template-columns: 1fr; /* Una sola colonna verticale */
-            gap: 40px;
-            margin-top: 40px;
-        }
-        .step {
-            padding: 0 15px;
-        }
-        .step p {
-            max-height: 1000px; /* Mostra sempre il testo su mobile */
-            opacity: 1;
-            margin-top: 10px;
-            overflow: visible;
-        }
-        .step-icon-wrap {
-            width: 80px; /* Leggermente più piccola per mobile */
-            height: 80px;
-        }
     }
     </style>
 </head>
@@ -429,7 +123,7 @@
     <div class="about-text">
         <h2>Chi Sono</h2>
         <p>Benvenuti. Sono il Dott. Giuseppe Andretta, specializzato nella pianificazione assicurativa e finanziaria avanzata. Con una solida esperienza alle spalle, mi dedico a guidare individui e aziende verso la massima sicurezza patrimoniale.</p>
-        <p style="font-weight: 700; color: var(--primary-blue); font-size: 1.25rem; font-style: italic; border-left: 4px solid var(--accent-gold); padding-left: 20px;">
+        <p style="font-weight: 700; color: var(--primary-blue); font-size: 1.2rem; font-style: italic; border-left: 4px solid var(--accent-gold); padding-left: 20px;">
             "Proteggo il tuo futuro senza conflitti di interesse."
         </p>
         <p>A differenza della consulenza tradizionale legata a un singolo istituto, la mia operatività si fonda sull'indipendenza e sull'accesso a un vasto panel di soluzioni, garantendo sempre la strategia migliore per le vostre specifiche esigenze.</p>
@@ -438,24 +132,15 @@
     <div class="about-highlights-vertical">
         <div class="highlight-card">
             <i class="fas fa-history"></i>
-            <div class="stat-text">
-                <h4>+20 Anni</h4>
-                <span>Di Esperienza</span>
-            </div>
+            <div><h4>+20 Anni</h4><span>Di Esperienza</span></div>
         </div>
         <div class="highlight-card">
             <i class="fas fa-handshake"></i>
-            <div class="stat-text">
-                <h4>+20 Compagnie</h4>
-                <span>Soluzioni disponibili</span>
-            </div>
+            <div><h4>+20 Compagnie</h4><span>Soluzioni Disponibili</span></div>
         </div>
         <div class="highlight-card">
             <i class="fas fa-shield-alt"></i>
-            <div class="stat-text">
-                <h4>100%</h4>
-                <span>Indipendenza Garantita</span>
-            </div>
+            <div><h4>100%</h4><span>Indipendenza Garantita</span></div>
         </div>
     </div>
 </section>
@@ -490,32 +175,26 @@
 <section class="metodo" id="metodo">
     <h2>Il Mio Metodo</h2>
     <p class="subtitle">Un percorso strutturato per garantire trasparenza e risultati concreti.</p>
-
     <div class="steps">
         <div class="step">
             <div class="step-icon-wrap"><span class="step-number">1</span><i class="fas fa-search"></i></div>
-            <h3>Analisi Iniziale</h3>
-            <p>Audit completo della situazione attuale.</p>
+            <div class="step-content"><h3>Analisi Iniziale</h3><p>Audit completo della situazione attuale.</p></div>
         </div>
         <div class="step">
             <div class="step-icon-wrap"><span class="step-number">2</span><i class="fas fa-bullseye"></i></div>
-            <h3>Obiettivi</h3>
-            <p>Identificazione dei traguardi di protezione.</p>
+            <div class="step-content"><h3>Obiettivi</h3><p>Identificazione dei traguardi di protezione.</p></div>
         </div>
         <div class="step">
             <div class="step-icon-wrap"><span class="step-number">3</span><i class="fas fa-cogs"></i></div>
-            <h3>Strategia</h3>
-            <p>Elaborazione di un piano d'azione personalizzato.</p>
+            <div class="step-content"><h3>Strategia</h3><p>Elaborazione di un piano personalizzato.</p></div>
         </div>
         <div class="step">
             <div class="step-icon-wrap"><span class="step-number">4</span><i class="fas fa-bolt"></i></div>
-            <h3>Azione</h3>
-            <p>Attivazione delle soluzioni con supporto completo.</p>
+            <div class="step-content"><h3>Azione</h3><p>Attivazione delle soluzioni con supporto.</p></div>
         </div>
         <div class="step">
             <div class="step-icon-wrap"><span class="step-number">5</span><i class="fas fa-chart-line"></i></div>
-            <h3>Monitoraggio</h3>
-            <p>Revisione periodica per adattare la strategia.</p>
+            <div class="step-content"><h3>Monitoraggio</h3><p>Revisione periodica della strategia.</p></div>
         </div>
     </div>
 </section>
@@ -526,33 +205,20 @@
         <p>Prenota una prima consulenza conoscitiva presso il mio studio. Analizzeremo insieme la tua situazione attuale per definire i passi necessari alla tua tutela finanziaria.</p>
         <div class="contact-details">
             <p><i class="fas fa-phone"></i> +39 347 7320450</p>
-            <p><a href="mailto:dottgiuseppeandretta@gmail.com?subject=Richiesta%20consulenza%20conoscitiva" class="map-link">
-                <i class="fas fa-envelope"></i> dottgiuseppeandretta@gmail.com
-            </a></p>
-            <p>
-                <a href="https://www.google.com/maps/dir/?api=1&destination=Vico+Alessandro+Delli+Santi+99/R+Manfredonia" target="_blank" class="map-link">
-                    <i class="fas fa-map-marker-alt"></i> Vico Alessandro Delli Santi 99/R, Manfredonia (FG)
-                </a>
-            </p>
+            <p><i class="fas fa-envelope"></i> dottgiuseppeandretta@gmail.com</p>
+            <p><i class="fas fa-map-marker-alt"></i> Vico Alessandro Delli Santi 99/R, Manfredonia (FG)</p>
         </div>
     </div>
-    
     <div class="quick-contact-box">
-        <a href="https://wa.me/393477320450?text=Salve,%20vorrei%20fissare%20una%20consulenza%20conoscitiva" class="contact-card" target="_blank">
-            <i class="fab fa-whatsapp" style="color: #25D366;"></i>
-            <h4>WhatsApp</h4>
-        </a>
-        <a href="mailto:dottgiuseppeandretta@gmail.com?subject=Richiesta%20consulenza%20conoscitiva&body=Gentile%20Dott.%20Andretta,%20vorrei%20fissare%20una%20consulenza%20conoscitiva%20per%20analizzare%20la%20mia%20situazione%20assicurativa." class="contact-card">
-            <i class="fas fa-envelope" style="color: var(--primary-blue);"></i>
-            <h4>Invia una Email</h4>
-        </a>
+        <a href="https://wa.me/393477320450" class="contact-card" target="_blank"><i class="fab fa-whatsapp" style="color:#25D366"></i><h4>WhatsApp</h4></a>
+        <a href="mailto:dottgiuseppeandretta@gmail.com" class="contact-card"><i class="fas fa-envelope"></i><h4>Invia una Email</h4></a>
     </div>
 </section>
 
 <footer>
     <strong>DOTT. GIUSEPPE ANDRETTA</strong><br>
     <span class="rui-code">Iscrizione RUI: E000751657</span>
-    <p style="font-size: 0.8rem; opacity: 0.6; margin-top: 20px;">© 2026 Tutti i diritti riservati. Attività di consulenza assicurativa svolta nel pieno rispetto delle normative IVASS vigenti.</p>
+    <p style="font-size: 0.8rem; opacity: 0.6; margin-top: 20px;">© 2026 Tutti i diritti riservati. Attività svolta nel rispetto delle normative IVASS vigenti.</p>
 </footer>
 
 </body>
