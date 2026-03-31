@@ -353,7 +353,7 @@
     footer { background-color: var(--primary-blue); color: #ffffff; padding: 50px 20px; text-align: center; }
     .rui-code { background: rgba(255,255,255,0.1); padding: 5px 15px; border-radius: 20px; font-size: 0.85rem; margin-top: 15px; display: inline-block; border: 1px solid rgba(255,255,255,0.2); }
 
-    /* --- MOBILE RESPONSIVE (AGGIUNTO PER TELEFONO) --- */
+    /* --- MOBILE RESPONSIVE AGGIORNATO --- */
     @media (max-width: 900px) {
         header { 
             flex-direction: column; 
@@ -367,31 +367,41 @@
             gap: 10px;
         }
         nav a { 
-            margin: 5px; 
+            margin: 5px 10px; 
             font-size: 0.75rem;
         }
         .hero h2 { font-size: 1.8rem; }
         .about, .contact-container { 
             flex-direction: column; 
             text-align: center; 
-            padding: 60px 5%;
+            padding: 60px 8%; 
         }
         .about-text, .contact-info { text-align: center; }
-        .about-highlights-vertical, .quick-contact-box { 
-            max-width: 100%; 
+        .contact-details p { justify-content: center; }
+        .about-highlights-vertical, .quick-contact-box {
+            max-width: 100%;
             width: 100%;
         }
-        .highlight-card:hover { transform: none; } /* Disabilita shift laterale su mobile */
-        .steps { 
-            grid-template-columns: 1fr; /* Mette gli step uno sotto l'altro */
+        
+        /* SISTEMAZIONE METODO SU MOBILE */
+        .steps {
+            grid-template-columns: 1fr; /* Una sola colonna verticale */
             gap: 40px;
+            margin-top: 40px;
         }
-        .step p { 
-            max-height: 1000px; 
-            opacity: 1; 
+        .step {
+            padding: 0 15px;
+        }
+        .step p {
+            max-height: 1000px; /* Mostra sempre il testo su mobile */
+            opacity: 1;
             margin-top: 10px;
+            overflow: visible;
         }
-        .contact-details p { justify-content: center; }
+        .step-icon-wrap {
+            width: 80px; /* Leggermente più piccola per mobile */
+            height: 80px;
+        }
     }
     </style>
 </head>
